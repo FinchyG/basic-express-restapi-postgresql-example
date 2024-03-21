@@ -4,9 +4,9 @@ CREATE DATABASE tutorial;
 
 CREATE TABLE public.students (
     id serial NOT NULL,
-    firstname varchar(40) NULL,
-    lastname varchar(40) NULL,
-    origin varchar(50) NULL,
+    firstname varchar(40) NOT NULL,
+    lastname varchar(40) NOT NULL,
+    origin varchar(50) NOT NULL,
     CONSTRAINT students_pkey PRIMARY KEY (id)
 );
 
@@ -15,3 +15,11 @@ CREATE TABLE public.students (
 
 ---check table details---
 \d students;
+
+INSERT INTO students (firstname, lastname, origin) VALUES ('fname1', 'lname1', 'origin1');
+
+INSERT INTO students (firstname, lastname, origin) VALUES ('fname2', 'lname2', 'origin2');
+
+SELECT * FROM students;
+
+SELECT * FROM students WHERE firstname = 'fname1';
